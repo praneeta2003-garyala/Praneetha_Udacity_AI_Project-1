@@ -1,0 +1,15 @@
+== Python ==
+Python 3.13.0
+
+== OS ==
+Linux 9a83bb42f28cea614e5e4ca72770b4f4de916775-855b9b56b7-njqc2 6.6.97+ #1 SMP Fri Aug 22 11:53:37 UTC 2025 x86_64 GNU/Linux
+PRETTY_NAME="Debian GNU/Linux 12 (bookworm)"
+NAME="Debian GNU/Linux"
+VERSION_ID="12"
+VERSION="12 (bookworm)"
+
+== Setup ==
+Workspace: Udacity/Vocareum VS Code terminal
+Each system installed in its own venv from its final solution/ folder:
+  python3 -m venv .venv && .venv/bin/pip install -e ".[dev]"
+Note: System 3 mypy run with --python-version 3.13 (pyproject pins 3.11; numpy stubs need 3.12+). See 03-supply-chain/static-checks.txt.

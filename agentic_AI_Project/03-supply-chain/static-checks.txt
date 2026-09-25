@@ -1,0 +1,9 @@
+NOTE: default 'mypy supply_chain_risk/' failed inside numpy's stubs (.venv/.../numpy/__init__.pyi:737:
+  'Type statement is only supported in Python 3.12 and greater'), because pyproject pins mypy's
+  python_version below 3.12 while the runtime is Python 3.13. Re-run targeting the actual runtime:
+
+$ mypy supply_chain_risk/ --python-version 3.13
+Success: no issues found in 8 source files
+
+$ ruff check supply_chain_risk/ tests/
+All checks passed!

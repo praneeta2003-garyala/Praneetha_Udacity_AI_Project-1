@@ -1,0 +1,59 @@
+--- "/workspace/Project-Evaluation and Observability Project/03-supply-chain/briefing.md"	2026-09-23 13:46:59.927957485 +0000
++++ "/workspace/Project-Evaluation and Observability Project/03-supply-chain/perturbation/briefing-timeout.md"	2026-09-23 13:50:20.159596883 +0000
+@@ -1,14 +1,11 @@
+ # Supply Chain Risk Briefing — Meridian
+ 
++> Sources unavailable: logistics unavailable (timeout)
++
+ ## Well-Established
+-### average_lead_time_days  _[corroborated across 2 sources]_
++### average_lead_time_days  _[single source only]_
+ - Reported values by source:
+     - 12.0 days — supplier_audit (as of 2026-04-10)
+-    - 12.0 days — logistics (as of 2026-04-05)
+-
+-| Metric | Value | As of | Source |
+-| --- | --- | --- | --- |
+-| average_lead_time_days | 12.0 days | 2026-04-05 | logistics |
+ 
+ ### defect_rate_ppm  _[corroborated across 2 sources]_
+ - Reported values by source:
+@@ -22,13 +19,9 @@
+ - Reported values by source:
+     - 1.4 percent — internal_quality (as of 2026-04-08)
+ 
+-### late_shipment_count  _[single source only]_
++### on_time_delivery_rate  _[single source only]_
+ - Reported values by source:
+-    - 11.0 shipments — logistics (as of 2026-04-05)
+-
+-| Metric | Value | As of | Source |
+-| --- | --- | --- | --- |
+-| late_shipment_count | 11.0 shipments | 2026-04-05 | logistics |
++    - 95.0 percent — supplier_audit (as of 2026-04-10)
+ 
+ ### port_disruption  _[single source only]_
+ > A 72-hour dockworker strike at the Port of Long Beach beginning March 16, 2026 stranded Meridian Components' inbound container shipments, delaying customer deliveries by an estimated five to nine days. (industry_news, 2026-03-17)
+@@ -39,18 +32,12 @@
+ 
+ 
+ ## Contested
+-### on_time_delivery_rate  _[2 sources, conflicting]_  ⚠️ ESCALATE
+-- escalation: high-impact metric is contested across sources
+-- Reported values by source:
+-    - 95.0 percent — supplier_audit (as of 2026-04-10)
+-    - 78.0 percent — logistics (as of 2026-04-05)
+-
+-| Metric | Value | As of | Source |
+-| --- | --- | --- | --- |
+-| on_time_delivery_rate | 78.0 percent | 2026-04-05 | logistics |
+-
++_none_
+ 
+ ## Incomplete
++### late_shipment_count  _[missing source: timeout reading logistics]_
++- missing source: timeout reading logistics
++
+ ### production_capacity_utilization  _[missing source: no source reported this metric]_  ⚠️ ESCALATE
+ - escalation: high-impact metric has no usable source
+ - missing source: no source reported this metric

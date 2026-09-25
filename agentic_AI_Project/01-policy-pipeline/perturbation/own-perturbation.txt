@@ -1,0 +1,11 @@
+PERTURBATION: blank a required field (premium_amount=None) vs. unperturbed vs. format error
+
+A) unperturbed well-formed extraction
+   result=PolicyExtraction api_calls=1 queued_responses=1 {}
+
+B) PERTURBED: premium_amount=None (value genuinely absent)
+   result=RetryFutileEscalation api_calls=1 queued_responses=4 {'field': 'premium_amount', 'detected_pattern': 'premium_amount_absent', 'reason': "Field 'premium_amount' returned null — the source document does not contain this information. Retry is futile; escalate to human review."}
+
+C) contrast: premium_amount=-1500 (format error), then corrected
+   result=PolicyExtraction api_calls=2 queued_responses=2 {}
+

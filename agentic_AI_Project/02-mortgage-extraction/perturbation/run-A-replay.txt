@@ -1,0 +1,31 @@
+$ diff original perturbed
+37c37
+< TOTAL MONTHLY EARNINGS                         10,892.17   35,929.43
+---
+> TOTAL MONTHLY EARNINGS                         9,642.17   35,929.43
+78c78
+< Gross Earnings (Monthly)              10,892.17    35,929.43
+---
+> Gross Earnings (Monthly)              9,642.17    35,929.43
+
+$ mortgage-extract income_total_fixed.txt --mode replay -v
+Traceback (most recent call last):
+  File "/workspace/Build a Resilient Mortgage Document Extraction System/04-validate-mathematical-consistency/solution/.venv/bin/mortgage-extract", line 10, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "/workspace/Build a Resilient Mortgage Document Extraction System/04-validate-mathematical-consistency/solution/mortgage_extractor/__main__.py", line 60, in main
+    extraction = pipeline.run(document_text)
+  File "/workspace/Build a Resilient Mortgage Document Extraction System/04-validate-mathematical-consistency/solution/mortgage_extractor/pipeline.py", line 58, in run
+    classification = self.classify_document(document_text)
+  File "/workspace/Build a Resilient Mortgage Document Extraction System/04-validate-mathematical-consistency/solution/mortgage_extractor/pipeline.py", line 65, in classify_document
+    response = self.client.call(
+        model=self.model,
+    ...<4 lines>...
+        messages=[{"role": "user", "content": document_text}],
+    )
+  File "/workspace/Build a Resilient Mortgage Document Extraction System/04-validate-mathematical-consistency/solution/mortgage_extractor/client.py", line 70, in call
+    raise FileNotFoundError(
+    ...<2 lines>...
+    )
+FileNotFoundError: No recorded response for key ae3764e7ac995cfb (mode=replay). Re-run with mode='record' or 'auto' to populate the cache.
+exit code: 1
